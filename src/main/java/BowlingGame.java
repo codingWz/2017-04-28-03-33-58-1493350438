@@ -76,4 +76,31 @@ public class BowlingGame {
 		return score;
 	
     }
+	private int addExtra1(String s) {
+		int score = 0;
+		char num = s.charAt(0);
+		if (num != '-') {
+			score += (num - 48);
+		}
+		return score;
+	}
+	
+	private int addExtra2(String s) {
+		int score = 0;
+		if (s.contains("/")) {
+			score += 10;
+		}else {
+			char num1 = s.charAt(0);
+			char num2 = s.charAt(1);
+			
+			if (num1 != '-') {
+				score += (num1 - 48);
+			}
+			
+			if (num2 != '-') {
+				score += (num2 - 48);
+			}
+		}
+		return score;
+	}
 }
